@@ -1,11 +1,11 @@
 const mysql = require('mysql2');
 
-// Crée une connexion à la base de données MySQL
+
 const db = mysql.createConnection({
   host: 'localhost',
-  user: 'root', // Remplace par ton nom d'utilisateur MySQL
-  password: '', // Remplace par ton mot de passe MySQL
-  database: 'gestion_projecteurs' // Nom de ta base de données
+  user: 'root', 
+  password: '', 
+  database: 'gestion_projecteurs' 
 });
 
 // Test de la connexion
