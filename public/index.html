@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Projecteurs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <h1>Gestion des Projecteurs</h1>
+            <div class="nav-links">
+                <button onclick="showPage('login')" id="loginBtn">Connexion</button>
+                <button onclick="showPage('register')" id="registerBtn">Inscription</button>
+                <button onclick="showPage('projectors')" id="projectorsBtn" style="display: none;">Projecteurs</button>
+                <button onclick="showPage('reservations')" id="reservationsBtn" style="display: none;">Réservations</button>
+                <button onclick="logout()" id="logoutBtn" style="display: none;">Déconnexion</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Page de connexion -->
+        <div id="loginPage" class="page">
+            <h2>Connexion</h2>
+            <form id="loginForm" onsubmit="login(event)">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Mot de passe" required>
+                <button type="submit">Se connecter</button>
+            </form>
+        </div>
+
+        <!-- Page d'inscription -->
+        <div id="registerPage" class="page">
+            <h2>Inscription</h2>
+            <form id="registerForm" onsubmit="register(event)">
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Mot de passe" required>
+                <button type="submit">S'inscrire</button>
+            </form>
+        </div>
+
+        <!-- Page des projecteurs -->
+        <div id="projectorsPage" class="page">
+            <h2>Gestion des Projecteurs</h2>
+            <form id="addProjectorForm" onsubmit="addProjector(event)">
+                <input type="text" name="name" placeholder="Nom du projecteur" required>
+                <button type="submit">Ajouter</button>
+            </form>
+
+            <div id="projectorsList" class="list-container">
+                <!-- La liste des projecteurs sera injectée ici -->
+            </div>
+        </div>
+
+        <!-- Page des réservations -->
+        <div id="reservationsPage" class="page">
+            <h2>Réservations</h2>
+            <form id="addReservationForm" onsubmit="addReservation(event)">
+                <select name="projector_id" id="projectorSelect" required>
+                    <!-- Les projecteurs seront injectés ici -->
+                </select>
+                <input type="datetime-local" name="start_time" required>
+                <input type="datetime-local" name="end_time" required>
+                <button type="submit">Réserver</button>
+            </form>
+
+            <div id="reservationsList" class="list-container">
+                <!-- La liste des réservations sera injectée ici -->
+            </div>
+        </div>
+    </main>
+
+    <script src="js/auth.js"></script>
+    <script src="js/projectors.js"></script>
+    <script src="js/reservations.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
