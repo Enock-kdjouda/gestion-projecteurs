@@ -2,6 +2,10 @@ const db = require('../config/database');
 
 // Créer une réservation
 exports.createReservation = (userId, projectorId, startTime, endTime, status = 'en attente', callback) => {
+console.log('Données de la réservation :', { userId, projectorId, startTime, endTime, status });
+console.log('Start Time:', startTime);
+console.log('End Time:', endTime);
+
   const sql = 'INSERT INTO reservations (user_id, projector_id, start_time, end_time, status) VALUES (?, ?, ?, ?, ?)';
   db.query(sql, [userId, projectorId, startTime, endTime, status], (error, results) => {
     if (error) return callback(error);
