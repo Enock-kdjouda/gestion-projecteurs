@@ -1,6 +1,6 @@
-const userModel = require('./models/userModels'); // Chemin vers ton modèle utilisateur
-const projectorModel = require('./models/projectorModels'); // Chemin vers ton modèle projecteur
-const reservationModel = require('./models/reservationModels'); // Chemin vers ton modèle réservation
+const userModel = require('./models/userModel'); // Chemin vers ton modèle utilisateur
+const projectorModel = require('./models/projectorModel'); // Chemin vers ton modèle projecteur
+const reservationModel = require('./models/reservationModel'); // Chemin vers ton modèle réservation
 const db = require('./config/database'); // Chemin vers ton fichier de connexion à la base de données
 
 // Fonction utilitaire pour afficher les résultats
