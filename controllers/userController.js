@@ -20,7 +20,7 @@ exports.register = async (req, res) => {
     res.status(201).json({ message: 'Utilisateur créé avec succès', userId: newUser.id });
 
   } catch (error) {
-    console.error("❌ Erreur lors de l'inscription :", error);
+    console.error(" Erreur lors de l'inscription :", error);
     res.status(500).json({ error: 'Erreur lors de l\'inscription', details: error.message });
   }
 };
@@ -54,7 +54,7 @@ exports.login = async (req, res) => {
     });
 
   } catch (error) {
-    console.error("❌ Erreur lors de la connexion :", error);
+    console.error(" Erreur lors de la connexion :", error);
     res.status(500).json({ error: 'Erreur lors de la connexion', details: error.message });
   }
 };
@@ -97,7 +97,7 @@ exports.updateUser = async (req, res) => {
     res.json({ message: 'Utilisateur mis à jour avec succès' });
 
   } catch (error) {
-    console.error("❌ Erreur lors de la mise à jour :", error);
+    console.error(" Erreur lors de la mise à jour :", error);
     res.status(500).json({ error: 'Erreur lors de la mise à jour', details: error.message });
   }
 };
@@ -116,7 +116,7 @@ exports.deleteUser = async (req, res) => {
     res.json({ message: 'Utilisateur supprimé avec succès' });
 
   } catch (error) {
-    console.error("❌ Erreur lors de la suppression :", error);
+    console.error(" Erreur lors de la suppression :", error);
     res.status(500).json({ error: 'Erreur lors de la suppression', details: error.message });
   }
 };
