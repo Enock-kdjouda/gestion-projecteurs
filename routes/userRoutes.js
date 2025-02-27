@@ -16,5 +16,6 @@ router.post('/register', validateRegistration, userController.register);
 router.post('/login', userController.login);
 router.put('/:id', auth, isAdmin, userController.updateUser);
 router.delete('/:id', auth, isAdmin, userController.deleteUser);
+router.get('/search', userController.getUserByEmail);
 
 module.exports = router;

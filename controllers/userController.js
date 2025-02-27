@@ -59,6 +59,29 @@ exports.login = async (req, res) => {
   }
 };
 
+// Rechercher un utilisateur par email
+exports.getUserByEmail = async (req, res) => {
+  try {
+    const { email } = req.query; // Récupérer l'email depuis la requête GET
+
+    if (!email) {
+      return res.status(400).json({ error: 'L\'email est requis' });
+    }
+
+    const user = await User.findUserByEmail(email);
+
+    if (!user) {
+      return res.status(404).json({ error: 'Utilisateur non trouvé' });
+    }
+
+    res.json(user);
+
+  } catch (error) {
+    console.error(" Erreur lors de la recherche de l'utilisateur :", error);
+    res.status(500).json({ error: 'Erreur lors de la recherche', details: error.message });
+  }
+};
+
 // Mise à jour d'un utilisateur
 exports.updateUser = async (req, res) => {
   try {
