@@ -16,7 +16,7 @@ exports.createUser = (email, password, role = 'etudiant') => {
         if (!results || !results.insertId) {
           return reject(new Error("Échec de l'insertion de l'utilisateur"));
         }
-        console.log("✅ Insertion réussie :", results);
+        console.log(" Insertion réussie :", results);
         resolve({ id: results.insertId, email, role });
       });
     });

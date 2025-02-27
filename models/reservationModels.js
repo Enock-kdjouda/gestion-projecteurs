@@ -20,12 +20,13 @@ exports.createReservation = (userId, projectorId, startTime, endTime, status = '
 // Lister toutes les réservations
 exports.getAllReservations = () => {
     return new Promise((resolve, reject) => {
-        const sql = `
-            SELECT r.id, u.name AS user_name, p.name AS projector_name, r.start_time, r.end_time, r.status
-            FROM reservations r
-            JOIN users u ON r.user_id = u.id
-            JOIN projectors p ON r.projector_id = p.id
-        `;
+         const sql = `
+          SELECT r.id, u.email AS user_email, p.name AS projector_name, r.start_time, r.end_time, r.status
+          FROM reservations r
+          JOIN users u ON r.user_id = u.id
+          JOIN projectors p ON r.projector_id = p.id
+          `;
+  
         db.query(sql, (error, results) => {
             if (error) {
                 console.error("Erreur SQL lors de la récupération des réservations :", error);
