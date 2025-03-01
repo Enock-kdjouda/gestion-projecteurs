@@ -59,7 +59,7 @@ describe('Models Tests', () => {
     });
 
     test('Reservation: should update reservation status', async () => {
-        const newStatus = 'confirmée';
+        const newStatus = 'approuvée';
         const result = await reservationModel.updateReservationStatus(reservationId, newStatus);
         expect(result.status).toBe(newStatus);
     });
